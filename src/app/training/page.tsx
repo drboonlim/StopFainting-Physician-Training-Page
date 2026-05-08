@@ -196,39 +196,41 @@ export default function TrainingPage() {
               </div>
             </div>
             <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-              <h3 className="font-bold text-cambridge mb-4">About Dr Boon Lim</h3>
-              <div className="flex items-start gap-4">
+              <h3 className="font-bold text-cambridge mb-4">The Imperial Syncope Unit Team</h3>
+              <div className="flex items-start gap-4 mb-4">
                 <div className="bg-cambridge rounded-full w-14 h-14 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                   BL
                 </div>
                 <div>
                   <p className="text-white font-semibold">Dr Boon Lim MBBS MD FRCP</p>
                   <p className="text-gray-400 text-sm mt-1">
-                    Consultant Cardiologist & Electrophysiologist<br />
+                    Consultant Cardiologist &amp; Clinical Electrophysiologist<br />
+                    Specialist interest in syncope &amp; POTS<br />
                     Imperial College Healthcare NHS Trust
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    Honorary Senior Lecturer<br />
-                    Imperial College London
                   </p>
                 </div>
               </div>
-              <div className="mt-4 space-y-2 text-sm text-gray-300">
-                <p>Specialist expertise in:</p>
-                <ul className="space-y-1">
-                  {[
-                    "POTS & dysautonomia",
-                    "Syncope & pre-syncope",
-                    "Cardiac arrhythmia",
-                    "HRV & biofeedback",
-                  ].map((e) => (
-                    <li key={e} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cambridge" />
-                      {e}
-                    </li>
-                  ))}
-                </ul>
+              <div className="space-y-2 text-sm">
+                {[
+                  { initials: "MD", name: "Dr Melanie Dani", role: "Consultant Geriatrician — syncope research" },
+                  { initials: "PE", name: "Philip Eardley", role: "Senior Syncope Nurse — 20+ yrs cardiac & emergency nursing" },
+                  { initials: "PT", name: "Patricia Taraborrelli", role: "Lead Nurse — Senior Syncope Specialist since 2011" },
+                  { initials: "RS", name: "Prof Richard Sutton", role: "Professor of Cardiology — tilt table diagnostics pioneer" },
+                  { initials: "AF", name: "Prof Artur Fedorowski", role: "Head of Syncope & Dysautonomia, Karolinska University" },
+                  { initials: "MO", name: "Morwenna Opie-Moran", role: "Clinical Psychologist" },
+                ].map((member) => (
+                  <div key={member.initials} className="flex items-center gap-3">
+                    <div className="bg-oxford rounded-full w-7 h-7 flex items-center justify-center text-cambridge font-bold text-xs flex-shrink-0">
+                      {member.initials}
+                    </div>
+                    <div>
+                      <p className="text-white text-xs font-semibold">{member.name}</p>
+                      <p className="text-gray-400 text-xs">{member.role}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
+              <p className="mt-3 text-xs text-gray-500">Imperial Syncope Diagnostic Unit, Hammersmith Hospital. Supported by Imperial Health Charity.</p>
             </div>
           </div>
         </div>

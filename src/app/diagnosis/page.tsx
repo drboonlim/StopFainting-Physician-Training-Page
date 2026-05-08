@@ -46,6 +46,7 @@ const activeStandSteps = [
       "Record HR & BP at 1 minute post-return",
       "Document time to symptom resolution",
       "Calculate maximum HR rise (peak standing HR − mean supine HR)",
+      "Calculate MALMO Score — composite symptom severity score recorded alongside active stand test",
       "Document whether HR criteria and symptoms were met",
     ],
     color: "bg-green-50",
@@ -55,27 +56,27 @@ const activeStandSteps = [
 const diagnosticCriteria = [
   {
     criterion: "HR rise ≥30 bpm",
-    detail: "From supine to standing, sustained over 10 minutes",
+    detail: "From supine to standing, sustained over 10 minutes. If resting HR <60 bpm, use 60 bpm as the baseline reference.",
     applies: "Adults",
   },
   {
     criterion: "HR rise ≥40 bpm",
-    detail: "From supine to standing, sustained over 10 minutes",
+    detail: "From supine to standing, sustained over 10 minutes.",
     applies: "Adolescents (12–19 yrs)",
   },
   {
     criterion: "No orthostatic hypotension",
-    detail: "BP drop <20 mmHg systolic / <10 mmHg diastolic",
+    detail: "BP drop <20 mmHg systolic / <10 mmHg diastolic. Note: brief initial drops on standing are normal.",
     applies: "All",
   },
   {
     criterion: "Symptoms present",
-    detail: "Palpitations, dizziness, presyncope, fatigue on standing",
+    detail: "Palpitations, dizziness, presyncope, fatigue — primarily when upright, relieved by lying down.",
     applies: "All",
   },
   {
     criterion: "Chronic duration",
-    detail: "Symptoms present for ≥3 months",
+    detail: "Symptoms present for ≥3 months. Note: diagnostic thresholds need not be met at every visit.",
     applies: "All",
   },
 ];
@@ -84,7 +85,7 @@ const investigations = [
   {
     category: "Mandatory",
     tests: [
-      { name: "Active Stand Test / NASA Lean Test", purpose: "Confirm orthostatic HR rise" },
+      { name: "Active Stand Test / NASA Lean Test + MALMO Score", purpose: "Confirm orthostatic HR rise and calculate symptom composite score" },
       { name: "12-lead ECG", purpose: "Exclude arrhythmia, pre-excitation, QTc" },
       { name: "FBC, U&E, TFTs, CRP/ESR", purpose: "Exclude secondary causes" },
       { name: "Blood glucose (fasting)", purpose: "Exclude hypoglycaemia" },

@@ -1,38 +1,59 @@
 import Link from "next/link";
 import { ExternalLink, Download, BookOpen, Users, Heart, Smartphone, ArrowRight } from "lucide-react";
 
+// 13-module educational programme co-created by POTS UK & Dr Boon Lim
+const educationalProgrammeModules = [
+  "Introduction to the programme",
+  "What is PoTS? — diagnostic criteria explained",
+  "Managing your GP appointment",
+  "Active Stand Test and MALMO Scores",
+  "Salt, fluids and diet",
+  "Temperature regulation, brain fog and sleep",
+  "Compression clothing",
+  "Posture and postural counter-manoeuvres",
+  "PoTS and exercise",
+  "Pacing — energy management strategies",
+  "PoTS and mental health",
+  "Techniques for calming your nervous system",
+  "About PoTS UK",
+];
+
 const potsukResources = [
   {
-    title: "POTS UK Educational Programme",
+    title: "POTS UK Educational Programme — Co-created with Dr Boon Lim",
     description:
-      "The comprehensive patient education programme developed by POTS UK. Covers understanding POTS, self-management strategies, exercise, diet, and emotional wellbeing. Ideal to share with newly diagnosed patients.",
+      "A 13-module video series developed collaboratively by POTS UK and Dr Boon Lim. Designed to provide 'knowledge, support and guidance whilst awaiting your first appointment.' Recommended pacing: no more than two modules at a time. Includes downloadable resources with each module.",
     url: "https://www.potsuk.org/managingpots/educational-programme-for-people-with-pots/",
     type: "Educational Programme",
     recommended: true,
+    drBoonLim: true,
   },
   {
-    title: "What is POTS? — POTS UK",
+    title: "What is PoTS? — POTS UK",
     description:
-      "Clear, patient-friendly explanation of POTS — what it is, how it affects the body, and what to expect. Excellent first resource for newly diagnosed patients.",
-    url: "https://www.potsuk.org/",
+      "Patient-friendly explanation of PoTS as 'an abnormality of the functioning of the autonomic (involuntary) nervous system.' Covers how the sympathetic nervous system produces excessive norepinephrine release on standing, and why normal blood vessel narrowing mechanisms malfunction in PoTS.",
+    url: "https://www.potsuk.org/about-pots/what-is-pots/",
     type: "Patient Information",
     recommended: true,
+    drBoonLim: false,
   },
   {
-    title: "Managing POTS — POTS UK",
+    title: "Managing PoTS — POTS UK",
     description:
-      "Practical guidance on daily management of POTS symptoms. Covers salt, fluids, exercise, compression, and medication. Language appropriate for patients.",
+      "Practical guidance covering diet, fluids, exercise, temperature regulation, sleep, compression, fatigue management, cognitive support, and mental health. Also covers pharmacological options: midodrine, ivabradine, beta-blockers, pyridostigmine, fludrocortisone, and IV fluid therapy.",
     url: "https://www.potsuk.org/managingpots/",
     type: "Self-Management",
     recommended: false,
+    drBoonLim: false,
   },
   {
     title: "POTS UK Support Network",
     description:
-      "Peer support forums and community groups for patients living with POTS. A vital source of emotional support alongside clinical treatment.",
+      "Peer support forums, online groups, and community connections for people living with PoTS. POTS UK is a registered charity (No. 1159813). Also offers the PoTS Passport — a portable medical information tool for healthcare interactions.",
     url: "https://www.potsuk.org/support/",
     type: "Support",
     recommended: false,
+    drBoonLim: false,
   },
 ];
 
@@ -141,9 +162,14 @@ const apps = [
 
 const supportOrgs = [
   {
+    name: "StopFainting.com",
+    url: "https://www.stopfainting.com",
+    description: "Dr Boon Lim's patient education website for syncope and POTS. Produced by the Imperial Syncope Diagnostic Unit, supported by Imperial Health Charity. Covers conditions including POTS, vasovagal syncope, orthostatic hypotension, long COVID, and hypermobility/dysautonomia.",
+  },
+  {
     name: "POTS UK",
     url: "https://www.potsuk.org",
-    description: "The UK's leading POTS patient charity. Education, support, and advocacy.",
+    description: "The UK's leading POTS patient charity (Reg. No. 1159813). Education, peer support, and advocacy. Home of the 13-module Educational Programme co-created with Dr Boon Lim.",
   },
   {
     name: "Dysautonomia International",
@@ -207,13 +233,20 @@ export default function ResourcesPage() {
                 rel="noopener noreferrer"
                 className="card border border-gray-200 hover:border-cambridge transition-all group"
               >
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex flex-wrap justify-between items-start mb-2 gap-2">
                   <span className="badge text-xs">{res.type}</span>
-                  {res.recommended && (
-                    <span className="text-xs bg-green-100 text-green-700 font-semibold px-2 py-1 rounded-full">
-                      ★ Recommended
-                    </span>
-                  )}
+                  <div className="flex gap-2">
+                    {res.drBoonLim && (
+                      <span className="text-xs bg-oxford text-cambridge font-bold px-2 py-1 rounded-full">
+                        Co-created by Dr Boon Lim
+                      </span>
+                    )}
+                    {res.recommended && (
+                      <span className="text-xs bg-green-100 text-green-700 font-semibold px-2 py-1 rounded-full">
+                        ★ Recommended
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <h3 className="font-bold text-oxford mt-2 group-hover:text-cambridge transition-colors">
                   {res.title}
@@ -221,6 +254,18 @@ export default function ResourcesPage() {
                 <p className="text-gray-600 text-sm mt-2 leading-relaxed">
                   {res.description}
                 </p>
+                {res.drBoonLim && (
+                  <div className="mt-3 bg-cambridge-pale border border-cambridge/20 rounded-lg p-3">
+                    <p className="text-xs font-semibold text-oxford mb-1">13 Modules include:</p>
+                    <ul className="grid grid-cols-1 gap-0.5">
+                      {educationalProgrammeModules.map((mod, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-center gap-1.5">
+                          <span className="text-cambridge font-bold">{i + 1}.</span> {mod}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <div className="mt-3 flex items-center gap-1 text-cambridge text-sm font-semibold">
                   Visit POTS UK <ExternalLink className="w-4 h-4" />
                 </div>
