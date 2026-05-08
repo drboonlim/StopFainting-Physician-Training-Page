@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --oxford-blue: #002147;
+  --cambridge-turquoise: #00B2A9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1a1a2e;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-cambridge text-white px-6 py-3 rounded-lg font-semibold hover:bg-cambridge-dark transition-all duration-200 inline-block;
+  }
+  .btn-secondary {
+    @apply border-2 border-oxford text-oxford px-6 py-3 rounded-lg font-semibold hover:bg-oxford hover:text-white transition-all duration-200 inline-block;
+  }
+  .btn-outline-white {
+    @apply border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-oxford transition-all duration-200 inline-block;
+  }
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-oxford;
+  }
+  .section-subheading {
+    @apply text-xl text-gray-600 mt-4 leading-relaxed;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
+  }
+  .badge {
+    @apply inline-block bg-cambridge-pale text-cambridge-dark text-sm font-semibold px-3 py-1 rounded-full;
+  }
+}
