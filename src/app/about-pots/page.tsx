@@ -62,19 +62,25 @@ const subtypes = [
 
 const symptoms = {
   orthostatic: [
-    "Palpitations on standing",
+    "Palpitations — 'sensation of your heart pounding in your chest'",
     "Lightheadedness / presyncope",
-    "Syncope",
-    "Visual disturbance (greying out)",
+    "Syncope (affects ~30–60% of POTS patients)",
+    "Chest pain — common, often worse when upright",
+    "Shortness of breath on standing or minimal exertion",
+    "Visual disturbance — blurred, tunnel vision, or excessive glare",
     "Nausea on standing",
-    "Chest discomfort",
+    "Shakiness / tremulousness",
+    "Excessive sweating",
+    "'PoTS feet' — purple discolouration of hands and feet (~50% of patients)",
   ],
   non_orthostatic: [
     "Fatigue & post-exertional malaise",
-    "Cognitive impairment ('brain fog')",
-    "Headache",
-    "Sleep disturbance",
-    "Gastrointestinal dysmotility",
+    "Brain fog — 'forgetful, difficulty thinking, difficulty focusing, cloudy'",
+    "Orthostatic headaches (~30% of POTS patients)",
+    "Sleep disturbance / insomnia",
+    "Gut problems — nausea, diarrhoea, constipation, bloating, abdominal pain",
+    "Bladder dysfunction",
+    "Exercise intolerance — severe worsening of symptoms after physical activity",
     "Thermoregulatory abnormalities",
   ],
 };
@@ -136,9 +142,11 @@ export default function AboutPotsPage() {
                 sclerosis or Parkinson&apos;s disease.
               </p>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Despite its prevalence, the average diagnostic delay remains
-                4–6 years, largely due to unfamiliarity among clinicians
-                outside specialist centres. This resource aims to change that.
+                Despite its prevalence, the average diagnostic delay remains{" "}
+                <strong className="text-oxford">7 years</strong> (POTS UK), largely due to
+                unfamiliarity among clinicians outside specialist centres, and because
+                over 50% of patients are initially misdiagnosed — most frequently with
+                anxiety or a mental health condition. This resource aims to change that.
               </p>
             </div>
             <div className="space-y-4">
@@ -184,7 +192,7 @@ export default function AboutPotsPage() {
               { value: "~1%", label: "UK Prevalence", sub: "~670,000 people affected" },
               { value: "80–85%", label: "Female", sub: "Women of childbearing age" },
               { value: "15–50", label: "Typical Age", sub: "Years at onset" },
-              { value: "4–6 yrs", label: "Diagnostic Delay", sub: "Average wait for diagnosis" },
+              { value: "7 years", label: "Diagnostic Delay", sub: "Average wait for diagnosis (POTS UK)" },
             ].map((s) => (
               <div key={s.label} className="card text-center">
                 <p className="text-3xl font-bold text-cambridge">{s.value}</p>

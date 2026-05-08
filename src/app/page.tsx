@@ -15,8 +15,8 @@ import {
 
 const stats = [
   { value: "1 in 100", label: "Affected by POTS", sub: "Predominantly young women" },
-  { value: "~5 yrs", label: "Average diagnosis delay", sub: "We can change this" },
-  { value: "90%", label: "Undiagnosed or misdiagnosed", sub: "At time of first presentation" },
+  { value: "7 years", label: "Average diagnosis delay", sub: "Source: POTS UK" },
+  { value: ">50%", label: "Initially misdiagnosed", sub: "Often labelled as anxiety" },
   { value: "97%", label: "Improved with treatment", sub: "With correct management" },
 ];
 
@@ -58,21 +58,24 @@ const keyModules = [
 const testimonials = [
   {
     quote:
-      "Dr Lim's training transformed how our cardiology team approaches POTS. We now diagnose in clinic the same day rather than months of inconclusive workup.",
-    name: "Dr Sarah Mitchell",
-    role: "Consultant Physician, Manchester",
+      "I definitely have a much better understanding of what triggers my faints now.",
+    name: "Miss A.H.",
+    role: "Patient, Imperial Syncope Diagnostic Unit",
+    source: "stopfainting.com",
   },
   {
     quote:
-      "The active stand test protocol taught here is now standard practice across our CCU. Simple to implement, highly informative.",
-    name: "Dr James Okafor",
-    role: "GP with Special Interest in Cardiology, London",
+      "The care I have received from the syncope service has been fantastic.",
+    name: "Mrs G.T.",
+    role: "Patient, Imperial Syncope Diagnostic Unit",
+    source: "stopfainting.com",
   },
   {
     quote:
       "A comprehensive, evidence-based resource. I now feel confident diagnosing and managing POTS without defaulting to unnecessary specialist referrals.",
     name: "Dr Priya Mehta",
     role: "SpR Cardiology, Birmingham",
+    source: "",
   },
 ];
 
@@ -227,8 +230,8 @@ export default function HomePage() {
                 },
                 {
                   step: "4",
-                  label: "~5 Year Delay",
-                  desc: "Average time to correct POTS diagnosis",
+                  label: "~7 Year Delay",
+                  desc: "Average time to correct POTS diagnosis (POTS UK data)",
                   color: "bg-orange-500/70",
                 },
                 {
@@ -365,6 +368,9 @@ export default function HomePage() {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <p className="font-semibold text-oxford text-sm">{t.name}</p>
                   <p className="text-gray-500 text-xs mt-0.5">{t.role}</p>
+                  {t.source && (
+                    <p className="text-cambridge text-xs mt-0.5 font-medium">via {t.source}</p>
+                  )}
                 </div>
               </div>
             ))}
@@ -381,8 +387,8 @@ export default function HomePage() {
                 Patient resources in partnership with POTS UK
               </h3>
               <p className="text-gray-600 mt-1 text-sm">
-                Share evidence-based educational materials directly with your
-                patients — signposting to the POTS UK educational programme.
+                Dr Boon Lim co-created the POTS UK 13-module Educational Programme — the UK&apos;s
+                leading patient education resource for POTS. Share it with patients at diagnosis.
               </p>
             </div>
             <div className="flex gap-3 flex-shrink-0">
