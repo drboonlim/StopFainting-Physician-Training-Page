@@ -40,6 +40,7 @@ export default function Footer() {
               Resources
             </h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/tools" className="hover:text-cambridge transition-colors">Clinical Tools</Link></li>
               <li><Link href="/resources" className="hover:text-cambridge transition-colors">Patient Resources</Link></li>
               <li>
                 <a

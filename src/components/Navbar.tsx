@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/diagnosis", label: "Diagnosis" },
   { href: "/management", label: "Management" },
   { href: "/training", label: "Physician Training" },
+  { href: "/tools", label: "Clinical Tools" },
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Refer a Patient" },
 ];
