@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, Video, FileText, Award, ChevronRight, Clock, GraduationCap, Users } from "lucide-react";
+import VideoEmbed from "@/components/VideoEmbed";
 
 const modules = [
   {
@@ -236,8 +237,30 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* MODULES */}
+      {/* INTRO VIDEO */}
       <section className="py-14 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <span className="badge mb-3">Watch First</span>
+            <h2 className="section-heading">Introduction to POTS — Dr Boon Lim</h2>
+            <p className="text-gray-600 mt-2 text-sm">
+              A short overview of POTS, why it matters, and how to use this training programme.
+            </p>
+          </div>
+          {/* ✏️ Replace YOUR_YOUTUBE_ID with your actual YouTube video ID
+               e.g. if your video URL is https://youtu.be/abc123XYZ  →  id="abc123XYZ"
+               Once uploaded to YouTube, send the link to Claude and it will update this automatically */}
+          <VideoEmbed
+            type="youtube"
+            id="YOUR_YOUTUBE_ID"
+            title="Introduction to POTS — Dr Boon Lim"
+            caption="Dr Boon Lim, Consultant Cardiologist, Imperial College Healthcare NHS Trust"
+          />
+        </div>
+      </section>
+
+      {/* MODULES */}
+      <section className="py-14 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="badge mb-4">Training Modules</span>
           <h2 className="section-heading mb-8">Core Curriculum</h2>
